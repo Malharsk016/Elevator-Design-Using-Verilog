@@ -1,0 +1,8 @@
+INTSTYLE=ise
+INFILE=C:\Users\Asus\Desktop\01fe21bee016\Verilog\elevatorproject2\elevatorproject2.ncd
+OUTFILE=C:\Users\Asus\Desktop\01fe21bee016\Verilog\elevatorproject2\elevatorproject2.bit
+FAMILY=Spartan6
+PART=xc6slx4-3tqg144
+WORKINGDIR=C:\Users\Asus\Desktop\01fe21bee016\Verilog\elevatorproject2
+LICENSE=WebPack
+USER_INFO=210676427_0_0_619

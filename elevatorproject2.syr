@@ -1,0 +1,420 @@
+Release 14.7 - xst P.20131013 (nt64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+--> Parameter TMPDIR set to xst/projnav.tmp
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.10 secs
+ 
+--> Parameter xsthdpdir set to xst
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.10 secs
+ 
+--> Reading design: elevatorproject2.prj
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Parsing
+  3) HDL Elaboration
+  4) HDL Synthesis
+       4.1) HDL Synthesis Report
+  5) Advanced HDL Synthesis
+       5.1) Advanced HDL Synthesis Report
+  6) Low Level Synthesis
+  7) Partition Report
+  8) Design Summary
+       8.1) Primitive and Black Box Usage
+       8.2) Device utilization summary
+       8.3) Partition Resource Summary
+       8.4) Timing Report
+            8.4.1) Clock Information
+            8.4.2) Asynchronous Control Signals Information
+            8.4.3) Timing Summary
+            8.4.4) Timing Details
+            8.4.5) Cross Clock Domains Report
+
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : "elevatorproject2.prj"
+Ignore Synthesis Constraint File   : NO
+
+---- Target Parameters
+Output File Name                   : "elevatorproject2"
+Output Format                      : NGC
+Target Device                      : xc6slx4-3-tqg144
+
+---- Source Options
+Top Module Name                    : elevatorproject2
+Automatic FSM Extraction           : YES
+FSM Encoding Algorithm             : Auto
+Safe Implementation                : No
+FSM Style                          : LUT
+RAM Extraction                     : Yes
+RAM Style                          : Auto
+ROM Extraction                     : Yes
+Shift Register Extraction          : YES
+ROM Style                          : Auto
+Resource Sharing                   : YES
+Asynchronous To Synchronous        : NO
+Shift Register Minimum Size        : 2
+Use DSP Block                      : Auto
+Automatic Register Balancing       : No
+
+---- Target Options
+LUT Combining                      : Auto
+Reduce Control Sets                : Auto
+Add IO Buffers                     : YES
+Global Maximum Fanout              : 100000
+Add Generic Clock Buffer(BUFG)     : 16
+Register Duplication               : YES
+Optimize Instantiated Primitives   : NO
+Use Clock Enable                   : Auto
+Use Synchronous Set                : Auto
+Use Synchronous Reset              : Auto
+Pack IO Registers into IOBs        : Auto
+Equivalent register Removal        : YES
+
+---- General Options
+Optimization Goal                  : Speed
+Optimization Effort                : 1
+Power Reduction                    : NO
+Keep Hierarchy                     : No
+Netlist Hierarchy                  : As_Optimized
+RTL Output                         : Yes
+Global Optimization                : AllClockNets
+Read Cores                         : YES
+Write Timing Constraints           : NO
+Cross Clock Analysis               : NO
+Hierarchy Separator                : /
+Bus Delimiter                      : <>
+Case Specifier                     : Maintain
+Slice Utilization Ratio            : 100
+BRAM Utilization Ratio             : 100
+DSP48 Utilization Ratio            : 100
+Auto BRAM Packing                  : NO
+Slice Utilization Ratio Delta      : 5
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Parsing                                  *
+=========================================================================
+Analyzing Verilog file "C:\Users\Asus\Desktop\01fe21bee016\Verilog\elevatorproject2\elevatorproject2.v" into library work
+Parsing module <elevatorproject2>.
+
+=========================================================================
+*                            HDL Elaboration                            *
+=========================================================================
+
+Elaborating module <elevatorproject2>.
+WARNING:HDLCompiler:413 - "C:\Users\Asus\Desktop\01fe21bee016\Verilog\elevatorproject2\elevatorproject2.v" Line 63: Result of 7-bit expression is truncated to fit in 6-bit target.
+WARNING:HDLCompiler:413 - "C:\Users\Asus\Desktop\01fe21bee016\Verilog\elevatorproject2\elevatorproject2.v" Line 73: Result of 32-bit expression is truncated to fit in 6-bit target.
+WARNING:HDLCompiler:1127 - "C:\Users\Asus\Desktop\01fe21bee016\Verilog\elevatorproject2\elevatorproject2.v" Line 39: Assignment to door_open ignored, since the identifier is never used
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Synthesizing Unit <elevatorproject2>.
+    Related source file is "C:\Users\Asus\Desktop\01fe21bee016\Verilog\elevatorproject2\elevatorproject2.v".
+        FLOOR_COUNT = 50
+        STABLE = 2'b00
+        MOVE_UP = 2'b01
+        MOVE_DOWN = 2'b10
+    Found 2-bit register for signal <state>.
+    Found 6-bit register for signal <elevator_floor>.
+    Found finite state machine <FSM_0> for signal <state>.
+    -----------------------------------------------------------------------
+    | States             | 3                                              |
+    | Transitions        | 7                                              |
+    | Inputs             | 2                                              |
+    | Outputs            | 2                                              |
+    | Clock              | clk (rising_edge)                              |
+    | Reset              | reset (positive)                               |
+    | Reset type         | asynchronous                                   |
+    | Reset State        | 00                                             |
+    | Encoding           | auto                                           |
+    | Implementation     | LUT                                            |
+    -----------------------------------------------------------------------
+    Found 6-bit adder for signal <elevator_floor[5]_GND_1_o_add_7_OUT> created at line 63.
+    Found 6-bit subtractor for signal <GND_1_o_GND_1_o_sub_16_OUT<5:0>> created at line 73.
+    Found 6-bit comparator equal for signal <n0000> created at line 49
+    Found 6-bit comparator greater for signal <current_floor[5]_requested_floor[5]_LessThan_7_o> created at line 62
+    Found 6-bit comparator lessequal for signal <requested_floor[5]_current_floor[5]_LessThan_15_o> created at line 72
+    Summary:
+	inferred   1 Adder/Subtractor(s).
+	inferred   6 D-type flip-flop(s).
+	inferred   3 Comparator(s).
+	inferred   4 Multiplexer(s).
+	inferred   1 Finite State Machine(s).
+Unit <elevatorproject2> synthesized.
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# Adders/Subtractors                                   : 1
+ 6-bit addsub                                          : 1
+# Registers                                            : 1
+ 6-bit register                                        : 1
+# Comparators                                          : 3
+ 6-bit comparator equal                                : 1
+ 6-bit comparator greater                              : 1
+ 6-bit comparator lessequal                            : 1
+# Multiplexers                                         : 4
+ 6-bit 2-to-1 multiplexer                              : 4
+# FSMs                                                 : 1
+
+=========================================================================
+INFO:Xst:1767 - HDL ADVISOR - Resource sharing has identified that some arithmetic operations in this design can share the same physical resources for reduced device utilization. For improved clock frequency you may try to disable resource sharing.
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+
+=========================================================================
+Advanced HDL Synthesis Report
+
+Macro Statistics
+# Adders/Subtractors                                   : 1
+ 6-bit addsub                                          : 1
+# Registers                                            : 6
+ Flip-Flops                                            : 6
+# Comparators                                          : 3
+ 6-bit comparator equal                                : 1
+ 6-bit comparator greater                              : 1
+ 6-bit comparator lessequal                            : 1
+# Multiplexers                                         : 4
+ 6-bit 2-to-1 multiplexer                              : 4
+# FSMs                                                 : 1
+
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+Analyzing FSM <MFsm> for best encoding.
+Optimizing FSM <FSM_0> on signal <state[1:2]> with gray encoding.
+-------------------
+ State | Encoding
+-------------------
+ 00    | 00
+ 10    | 01
+ 01    | 11
+-------------------
+
+Optimizing unit <elevatorproject2> ...
+
+Mapping all equations...
+Building and optimizing final netlist ...
+Found area constraint ratio of 100 (+ 5) on block elevatorproject2, actual ratio is 1.
+
+Final Macro Processing ...
+
+=========================================================================
+Final Register Report
+
+Macro Statistics
+# Registers                                            : 8
+ Flip-Flops                                            : 8
+
+=========================================================================
+
+=========================================================================
+*                           Partition Report                            *
+=========================================================================
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+=========================================================================
+*                            Design Summary                             *
+=========================================================================
+
+Top Level Output File Name         : elevatorproject2.ngc
+
+Primitive and Black Box Usage:
+------------------------------
+# BELS                             : 28
+#      LUT2                        : 2
+#      LUT4                        : 10
+#      LUT5                        : 5
+#      LUT6                        : 10
+#      MUXF7                       : 1
+# FlipFlops/Latches                : 8
+#      FDC                         : 2
+#      FDCE                        : 6
+# Clock Buffers                    : 1
+#      BUFGP                       : 1
+# IO Buffers                       : 19
+#      IBUF                        : 13
+#      OBUF                        : 6
+
+Device utilization summary:
+---------------------------
+
+Selected Device : 6slx4tqg144-3 
+
+
+Slice Logic Utilization: 
+ Number of Slice Registers:               8  out of   4800     0%  
+ Number of Slice LUTs:                   27  out of   2400     1%  
+    Number used as Logic:                27  out of   2400     1%  
+
+Slice Logic Distribution: 
+ Number of LUT Flip Flop pairs used:     27
+   Number with an unused Flip Flop:      19  out of     27    70%  
+   Number with an unused LUT:             0  out of     27     0%  
+   Number of fully used LUT-FF pairs:     8  out of     27    29%  
+   Number of unique control sets:         2
+
+IO Utilization: 
+ Number of IOs:                          20
+ Number of bonded IOBs:                  20  out of    102    19%  
+
+Specific Feature Utilization:
+ Number of BUFG/BUFGCTRLs:                1  out of     16     6%  
+
+---------------------------
+Partition Resource Summary:
+---------------------------
+
+  No Partitions were found in this design.
+
+---------------------------
+
+
+=========================================================================
+Timing Report
+
+NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
+      FOR ACCURATE TIMING INFORMATION PLEASE REFER TO THE TRACE REPORT
+      GENERATED AFTER PLACE-and-ROUTE.
+
+Clock Information:
+------------------
+-----------------------------------+------------------------+-------+
+Clock Signal                       | Clock buffer(FF name)  | Load  |
+-----------------------------------+------------------------+-------+
+clk                                | BUFGP                  | 8     |
+-----------------------------------+------------------------+-------+
+
+Asynchronous Control Signals Information:
+----------------------------------------
+No asynchronous control signals found in this design
+
+Timing Summary:
+---------------
+Speed Grade: -3
+
+   Minimum period: 2.936ns (Maximum Frequency: 340.565MHz)
+   Minimum input arrival time before clock: 5.753ns
+   Maximum output required time after clock: 3.847ns
+   Maximum combinational path delay: No path found
+
+Timing Details:
+---------------
+All values displayed in nanoseconds (ns)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'clk'
+  Clock period: 2.936ns (frequency: 340.565MHz)
+  Total number of paths / destination ports: 68 / 13
+-------------------------------------------------------------------------
+Delay:               2.936ns (Levels of Logic = 2)
+  Source:            state_FSM_FFd2 (FF)
+  Destination:       elevator_floor_4 (FF)
+  Source Clock:      clk rising
+  Destination Clock: clk rising
+
+  Data Path: state_FSM_FFd2 to elevator_floor_4
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDC:C->Q             13   0.447   1.037  state_FSM_FFd2 (state_FSM_FFd2)
+     LUT4:I2->O            1   0.203   0.944  Mmux_state[1]_elevator_floor[5]_wide_mux_23_OUT_A41 (Mmux_state[1]_elevator_floor[5]_wide_mux_23_OUT_rs_A<3>)
+     LUT6:I0->O            1   0.203   0.000  Mmux_state[1]_elevator_floor[5]_wide_mux_23_OUT_rs_xor<4>11 (state[1]_elevator_floor[5]_wide_mux_23_OUT<4>)
+     FDCE:D                    0.102          elevator_floor_4
+    ----------------------------------------
+    Total                      2.936ns (0.955ns logic, 1.981ns route)
+                                       (32.5% logic, 67.5% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'clk'
+  Total number of paths / destination ports: 348 / 22
+-------------------------------------------------------------------------
+Offset:              5.753ns (Levels of Logic = 4)
+  Source:            current_floor<5> (PAD)
+  Destination:       elevator_floor_0 (FF)
+  Destination Clock: clk rising
+
+  Data Path: current_floor<5> to elevator_floor_0
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O             4   1.222   0.912  current_floor_5_IBUF (current_floor_5_IBUF)
+     LUT4:I1->O            2   0.205   0.961  _n0052111 (_n005211)
+     LUT5:I0->O            2   0.203   0.981  current_floor[5]_requested_floor[5]_LessThan_7_o1 (current_floor[5]_requested_floor[5]_LessThan_7_o)
+     LUT6:I0->O            6   0.203   0.744  _n0062_inv3 (_n0062_inv)
+     FDCE:CE                   0.322          elevator_floor_0
+    ----------------------------------------
+    Total                      5.753ns (2.155ns logic, 3.598ns route)
+                                       (37.5% logic, 62.5% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'clk'
+  Total number of paths / destination ports: 6 / 6
+-------------------------------------------------------------------------
+Offset:              3.847ns (Levels of Logic = 1)
+  Source:            elevator_floor_0 (FF)
+  Destination:       elevator_floor<0> (PAD)
+  Source Clock:      clk rising
+
+  Data Path: elevator_floor_0 to elevator_floor<0>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDCE:C->Q             9   0.447   0.829  elevator_floor_0 (elevator_floor_0)
+     OBUF:I->O                 2.571          elevator_floor_0_OBUF (elevator_floor<0>)
+    ----------------------------------------
+    Total                      3.847ns (3.018ns logic, 0.829ns route)
+                                       (78.5% logic, 21.5% route)
+
+=========================================================================
+
+Cross Clock Domains Report:
+--------------------------
+
+Clock to Setup on destination clock clk
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+clk            |    2.936|         |         |         |
+---------------+---------+---------+---------+---------+
+
+=========================================================================
+
+
+Total REAL time to Xst completion: 4.00 secs
+Total CPU time to Xst completion: 4.10 secs
+ 
+--> 
+
+Total memory usage is 4486460 kilobytes
+
+Number of errors   :    0 (   0 filtered)
+Number of warnings :    3 (   0 filtered)
+Number of infos    :    1 (   0 filtered)
+

@@ -1,0 +1,3 @@
+verilog isim_temp "elevatorproject2.v"
+verilog isim_temp "elevatorproject2_tf.v"
+verilog isim_temp "C:/Xilinx/14.7/ISE_DS/ISE//verilog/src/glbl.v"

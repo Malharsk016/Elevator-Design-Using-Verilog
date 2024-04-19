@@ -1,0 +1,1 @@
+-intstyle "ise" -incremental -lib "unisims_ver" -lib "unimacro_ver" -lib "xilinxcorelib_ver" -lib "secureip" -o "C:/Users/Asus/Desktop/01fe21bee016/Verilog/elevatorproject2/elevator_project_tf1_isim_beh.exe" -prj "C:/Users/Asus/Desktop/01fe21bee016/Verilog/elevatorproject2/elevator_project_tf1_beh.prj" "work.elevator_project_tf1" "work.glbl" 

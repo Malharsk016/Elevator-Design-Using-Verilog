@@ -1,0 +1,20 @@
+xst -intstyle ise -ifn "C:/Users/Asus/Desktop/01fe21bee016/Verilog/elevatorproject2/elevatorproject2.xst" -ofn "C:/Users/Asus/Desktop/01fe21bee016/Verilog/elevatorproject2/elevatorproject2.syr" 
+xst -intstyle ise -ifn "C:/Users/Asus/Desktop/01fe21bee016/Verilog/elevatorproject2/elevatorproject2.xst" -ofn "C:/Users/Asus/Desktop/01fe21bee016/Verilog/elevatorproject2/elevatorproject2.syr" 
+xst -intstyle ise -ifn "C:/Users/Asus/Desktop/01fe21bee016/Verilog/elevatorproject2/elevatorproject2.xst" -ofn "C:/Users/Asus/Desktop/01fe21bee016/Verilog/elevatorproject2/elevatorproject2.syr" 
+xst -intstyle ise -ifn "C:/Users/Asus/Desktop/01fe21bee016/Verilog/elevatorproject2/elevatorproject2.xst" -ofn "C:/Users/Asus/Desktop/01fe21bee016/Verilog/elevatorproject2/elevatorproject2.syr" 
+xst -intstyle ise -ifn "C:/Users/Asus/Desktop/01fe21bee016/Verilog/elevatorproject2/elevatorproject2.xst" -ofn "C:/Users/Asus/Desktop/01fe21bee016/Verilog/elevatorproject2/elevatorproject2.syr" 
+xst -intstyle ise -ifn "C:/Users/Asus/Desktop/01fe21bee016/Verilog/elevatorproject2/elevatorproject2.xst" -ofn "C:/Users/Asus/Desktop/01fe21bee016/Verilog/elevatorproject2/elevatorproject2.syr" 
+xst -intstyle ise -ifn "C:/Users/Asus/Desktop/01fe21bee016/Verilog/elevatorproject2/elevatorproject2.xst" -ofn "C:/Users/Asus/Desktop/01fe21bee016/Verilog/elevatorproject2/elevatorproject2.syr" 
+xst -intstyle ise -ifn "C:/Users/Asus/Desktop/01fe21bee016/Verilog/elevatorproject2/elevatorproject2.xst" -ofn "C:/Users/Asus/Desktop/01fe21bee016/Verilog/elevatorproject2/elevatorproject2.syr" 
+xst -intstyle ise -ifn "C:/Users/Asus/Desktop/01fe21bee016/Verilog/elevatorproject2/elevatorproject2.xst" -ofn "C:/Users/Asus/Desktop/01fe21bee016/Verilog/elevatorproject2/elevatorproject2.syr" 
+xst -intstyle ise -ifn "C:/Users/Asus/Desktop/01fe21bee016/Verilog/elevatorproject2/elevatorproject2.xst" -ofn "C:/Users/Asus/Desktop/01fe21bee016/Verilog/elevatorproject2/elevatorproject2.syr" 
+xst -intstyle ise -ifn "C:/Users/Asus/Desktop/01fe21bee016/Verilog/elevatorproject2/elevatorproject2.xst" -ofn "C:/Users/Asus/Desktop/01fe21bee016/Verilog/elevatorproject2/elevatorproject2.syr" 
+xst -intstyle ise -ifn "C:/Users/Asus/Desktop/01fe21bee016/Verilog/elevatorproject2/elevatorproject2.xst" -ofn "C:/Users/Asus/Desktop/01fe21bee016/Verilog/elevatorproject2/elevatorproject2.syr" 
+xst -intstyle ise -ifn "C:/Users/Asus/Desktop/01fe21bee016/Verilog/elevatorproject2/elevatorproject2.xst" -ofn "C:/Users/Asus/Desktop/01fe21bee016/Verilog/elevatorproject2/elevatorproject2.syr" 
+xst -intstyle ise -ifn "C:/Users/Asus/Desktop/01fe21bee016/Verilog/elevatorproject2/elevatorproject2.xst" -ofn "C:/Users/Asus/Desktop/01fe21bee016/Verilog/elevatorproject2/elevatorproject2.syr" 
+netgen -intstyle ise -insert_glbl true -w -dir netgen/synthesis -ofmt verilog -sim elevatorproject2.ngc elevatorproject2_synthesis.v 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc6slx4-tqg144-3 elevatorproject2.ngc elevatorproject2.ngd  
+map -intstyle ise -p xc6slx4-tqg144-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o elevatorproject2_map.ncd elevatorproject2.ngd elevatorproject2.pcf 
+par -w -intstyle ise -ol high -mt off elevatorproject2_map.ncd elevatorproject2.ncd elevatorproject2.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml elevatorproject2.twx elevatorproject2.ncd -o elevatorproject2.twr elevatorproject2.pcf 
+bitgen -intstyle ise -f elevatorproject2.ut elevatorproject2.ncd 
